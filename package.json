@@ -2,10 +2,11 @@
   "name": "react-comments",
   "version": "1.0.0",
   "description": "",
-  "main": "rollup.config.js",
   "scripts": {
     "build-core": "cd core && yarn build",
-    "build-docs": "cd docs && yarn build"
+    "build-docs": "cd docs && yarn build-docs",
+    "start-dev-docs": "cd docs && yarn start",
+    "start-docs": "cd docs && yarn storybook"
   },
   "author": "",
   "license": "ISC"

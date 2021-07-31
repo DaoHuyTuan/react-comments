@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Element from '../Elements'
 
-export type CommentItemProps = {
+export interface CommentItemProps {
   avatar?: string
   author?: string
   date?: string
@@ -9,12 +9,13 @@ export type CommentItemProps = {
   [key: string]: any
 }
 
-const CommentItem: React.VoidFunctionComponent<CommentItemProps> = () => {
+export const CommentItem: React.VoidFunctionComponent<CommentItemProps> = ({
+  contents,
+  el_props
+}) => {
   return (
     <Element>
-      <span>hello this is item</span>
+      <span>{contents}</span>
     </Element>
   )
 }
-
-export default CommentItem

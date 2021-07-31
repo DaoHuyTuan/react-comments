@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export type ElProps = {
+export interface ElProps {
   hidden?: boolean
   loading?: boolean
 }

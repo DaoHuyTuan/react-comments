@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Element, { ElProps } from '../Elements'
 
-export type PaginationProps = {
+export interface PaginationProps {
   page?: number
   onPageNext?: () => void
   onPageBack?: () => void
@@ -9,8 +9,6 @@ export type PaginationProps = {
   el_props?: ElProps
 }
 
-const Pagination: React.VoidFunctionComponent<PaginationProps> = () => {
+export const Pagination: React.VoidFunctionComponent<PaginationProps> = () => {
   return <Element></Element>
 }
-
-export default Pagination

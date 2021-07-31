@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-const Editor: React.VoidFunctionComponent = () => {
+export interface EditorProps {}
+
+export const Editor: React.VoidFunctionComponent<EditorProps> = () => {
   return <span>test</span>
 }
-
-export default Editor

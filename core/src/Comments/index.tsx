@@ -1,28 +1,37 @@
 import * as React from 'react'
-import CommentItem, { CommentItemProps } from '../CommentItem'
+import { CommentItem, CommentItemProps } from '../CommentItem'
+import { EditorProps } from '../Editor'
 import Element, { ElProps } from '../Elements'
 import { PaginationProps } from '../Pagination'
 
-type CommentsSettings = {
+interface CommentsConfigs {
   thread?: boolean
   maxDisplay?: number
   typeDisplay?: 'infinity' | 'pagination'
 }
 
-type ComponentsType = {
+interface ComponentsType {
   Pagimation?: PaginationProps
+  Editor?: EditorProps
 }
 
-type CommentsProps = {
+interface CommentsProps {
   data?: Array<CommentItemProps>
-  settings?: CommentsSettings
+  configs?: CommentsConfigs
   components?: ComponentsType
   el_props?: ElProps
 }
 
-const Comments = ({ el_props }: CommentsProps) => {
-  return <Element el_props={el_props}></Element>
-}
-
-Comments.Item = CommentItem
-export default Comments
+export const Comments: React.VoidFunctionComponent<CommentsProps> = React.memo(
+  ({ data, el_props, configs, components }) => {
+    return (
+      <Element el_props={el_props}>
+        <>
+          {data?.map(item => {
+            return <CommentItem {...item} />
+          })}
+        </>
+      </Element>
+    )
+  }
+)
