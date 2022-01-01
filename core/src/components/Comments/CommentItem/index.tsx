@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Element from '../Elements'
+import Element from '../../Elements'
 
 export interface CommentItemProps {
   avatar?: string
@@ -11,7 +11,7 @@ export interface CommentItemProps {
 
 export const CommentItem: React.VoidFunctionComponent<CommentItemProps> = ({
   contents,
-  el_props
+  elProps
 }) => {
   return (
     <Element>

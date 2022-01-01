@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Header } from './Header'
 import './page.css'
-import { Comments } from '../../../core/src'
+import { Comments, Editor } from '../../../core/src'
 interface PageProps {
   user?: {}
   onLogin: () => void
@@ -32,7 +32,7 @@ export const Page = ({
         onLogout={onLogout}
         onCreateAccount={onCreateAccount}
       /> */}
-      <Comments data={data} />
+      <Editor />
     </>
   )
 }

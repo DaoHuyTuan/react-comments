@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { CommentItem, CommentItemProps } from '../CommentItem'
+import { CommentItem, CommentItemProps } from './CommentItem'
 import { EditorProps } from '../Editor'
-import Element, { ElProps } from '../Elements'
-import { PaginationProps } from '../Pagination'
+import Element, { elProps } from '../Elements'
+import { PaginationProps } from './Pagination'
 
 interface CommentsConfigs {
   thread?: boolean
@@ -11,21 +11,21 @@ interface CommentsConfigs {
 }
 
 interface ComponentsType {
-  Pagimation?: PaginationProps
-  Editor?: EditorProps
+  Item?: React.ReactNode
+  Pagination?: React.ReactNode
 }
 
 interface CommentsProps {
   data?: Array<CommentItemProps>
   configs?: CommentsConfigs
   components?: ComponentsType
-  el_props?: ElProps
+  elProps?: elProps
 }
 
 export const Comments: React.VoidFunctionComponent<CommentsProps> = React.memo(
-  ({ data, el_props, configs, components }) => {
+  ({ data, elProps, configs, components }) => {
     return (
-      <Element el_props={el_props}>
+      <Element elProps={elProps}>
         <>
           {data?.map(item => {
             return <CommentItem {...item} />
